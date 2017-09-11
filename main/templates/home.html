@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content_title %}
+<h1> Welcome to my Python Blog ! </h1>
+<h4> This blog discusses about in-depth Python usage as a Web Service Application </h4>
+{% endblock %}
+
+
+{% block page_content %}
+<div class="top-pad">
+    {% for id, resort in resorts.items() %}
+    <div class="well">
+        <h2>
+            <a href="{{ url_for('resorts.resort', id=id) }}">{{
+                resort['name'] }}</a>
+            <small>$ {{ resort['price'] }}</small>
+        </h2>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}
+
+
+{% block sidebar %}
+<div class="top-pad">
+    <ul class="well nav nav-list">
+        <li><h4>Tags</h4></li>
+    </ul>
+    <p>The local date and time is {{ moment(current_time).format('LLL') }}.</p>
+    <p>That was {{ moment(current_time).fromNow(refresh=True) }}</p>
+    {% if current_user.is_authenticated %}
+    <p> Current User: {{ current_user.username }} </p>
+    {% else %}
+    <p> Current User: Stranger </p>
+    {% endif %}
+</div>
+{% endblock %}
+

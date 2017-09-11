@@ -1,0 +1,12 @@
+ body {
+     padding-top: 60px;
+}
+.top-pad {
+     padding: 40px 15px;
+     text-align: center;
+}
+.sidebar-pad {
+     padding: 20px 100px;
+     text-align: left;
+}
+
