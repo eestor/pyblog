@@ -1,12 +1,20 @@
 {% extends 'base.html' %}
+
 {% block content_title %}
+<h4> {{ post['title'] }} </h4>
 {% endblock %}
 
 {% block page_content %}
 <div class="top-pad">
-    <h1>{{ post['body'] }}
-        <small>{{ post['timestamp'] }}</small>
-    </h1>
-    <h3> {{ post['author_id'] }}</h3>
+    <div>
+        <h4>
+            <small> Created on: {{ post['timestamp'] }}</small>
+        </h4>
+        <h4>
+            <small> Author: {{ post['username'] }}</small>
+        </h4>
+        <hr>
+        <p> {{ post['body'] }}</p>
+    </div>
 </div>
 {% endblock %}

@@ -24,4 +24,4 @@ app.register_blueprint(main)
 app.register_blueprint(auth)
 app.register_blueprint(posts)
 
-db.create_all()
+

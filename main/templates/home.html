@@ -10,14 +10,12 @@
 <div class="top-pad">
     {% for id, post in posts.items() %}
     <div class="well">
-        <h2>
-            <a href="{{ url_for('posts.post', id=id) }}">{{post['body'] }}</a>
-            <small> Created: {{ post['timestamp'] }}</small>
-            <small> Author:  {{ post['author_id'] }}</small>
-        </h2>
+        <h2><a href="{{ url_for('posts.post', id=id) }}">{{post.title }}</a></h2>
+        <h4><small> Created on: {{ post['timestamp'] }}</small></h4>
+        <h4><small> Author:  {{ post['username'] }}</small></h4>
     </div>
+    {% endfor %}
 </div>
-{% endfor %}
 {% endblock %}
 
 

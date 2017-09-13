@@ -14,9 +14,10 @@ def home():
     posts = Post.query.all()
     for post in posts:
         data[post.id] = {'id': post.id,
+                         'title': post.title,
                          'body': post.body,
                          'timestamp': post.timestamp,
-                         'author_id': post.author_id
+                         'username': post.users.username
                          }
 
     return render_template('home.html', posts=data, current_time=dt.utcnow())

@@ -13,7 +13,8 @@ def post(id):
     data = {'id': post.id,
             'body': post.body,
             'timestamp': post.timestamp,
-            'author_id': post.author_id
+            'username': post.users.username,
+            'title': post.title
             }
     return render_template('post.html', post=data)
 
