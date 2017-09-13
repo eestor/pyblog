@@ -5,16 +5,22 @@ from main.models.role import Role
 from main.models.user import User
 from main.models.post import Post
 from werkzeug.contrib.profiler import ProfilerMiddleware
+from flask_admin import Admin
+
 
 def make_shell_context():
     return dict(app=app, db=db, Role=Role, User=User, Post=Post)
 
 app.config.from_object('main.config.DevelopmentConfig')
+
+from main import admin
 #app.wsgi_app = ProfilerMiddleware(app.wsgi_app, restrictions=[30])
 manager = Manager(app)
 migrate = Migrate(app, db)
 manager.add_command('db', MigrateCommand)
 manager.add_command("shell", Shell(make_context=make_shell_context))
+
+
 
 
 

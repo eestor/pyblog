@@ -3,6 +3,8 @@ from flask_login import LoginManager
 from flask_sqlalchemy import SQLAlchemy
 from flask_bootstrap import Bootstrap
 from flask_moment import Moment
+from flask_admin import Admin
+from flask_admin.contrib.sqla import ModelView
 
 app = Flask(__name__)
 
@@ -18,10 +20,17 @@ from .controllers.authentication import auth
 from .controllers.main import main
 from .controllers.posts import posts
 
+from .models.role import Role
+from .models.user import User
+from .models.post import Post
+
 from .errors import page_not_found, internal_server_error
 
 app.register_blueprint(main)
 app.register_blueprint(auth)
 app.register_blueprint(posts)
 
-
+admin = Admin(app, 'PyBlog Admin')
+admin.add_view(ModelView(Role, db.session))
+admin.add_view(ModelView(User, db.session))
+admin.add_view(ModelView(Post, db.session))
