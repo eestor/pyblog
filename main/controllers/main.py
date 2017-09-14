@@ -12,6 +12,7 @@ main = Blueprint('main', __name__)
 def home():
     data = {}
     posts = Post.query.all()
+    '''
     for post in posts:
         data[post.id] = {'id': post.id,
                          'title': post.title,
@@ -19,5 +20,5 @@ def home():
                          'timestamp': post.timestamp,
                          'username': post.users.username
                          }
-
-    return render_template('home.html', posts=data, current_time=dt.utcnow())
+    '''
+    return render_template('home.html', posts=posts, current_time=dt.utcnow())

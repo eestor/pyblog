@@ -10,13 +10,15 @@ def post(id):
     post = Post.query.get_or_404(id)
     if not post:
         abort(404)
+    '''
     data = {'id': post.id,
             'body': post.body,
             'timestamp': post.timestamp,
             'username': post.users.username,
             'title': post.title
             }
-    return render_template('post.html', post=data)
+    '''
+    return render_template('post.html', post=post)
 
 
 '''

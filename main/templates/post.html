@@ -1,20 +1,26 @@
 {% extends 'base.html' %}
 
 {% block content_title %}
-<h4> {{ post['title'] }} </h4>
+<h2> {{ post['title'] }} </h2>
 {% endblock %}
 
 {% block page_content %}
 <div class="top-pad">
-    <div>
+
+    <div class="profile-thumbnail">
         <h4>
-            <small> Created on: {{ post['timestamp'] }}</small>
+            <a href="{{ url_for('posts.post', id=post.id) }}">
+                <img class="img-rounded profile-thumbnal" src={{ post.author.gravatar(size=40) }}>
+            </a>
+            <small> By : {{ post.author.username }}</small>
         </h4>
         <h4>
-            <small> Author: {{ post['username'] }}</small>
+            <small> Created on : {{ post.timestamp }}</small>
         </h4>
         <hr>
-        <p> {{ post['body'] }}</p>
+        <p> {{ post.body }}</p>
     </div>
+
+
 </div>
 {% endblock %}
