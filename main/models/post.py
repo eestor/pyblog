@@ -9,3 +9,15 @@ class Post(db.Model):
     body = db.Column(db.Text)
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow())
     author_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+
+    def prev_num(self):
+        pass
+
+    def next_num(self):
+        pass
+
+    def page(self):
+        return 1
+
+    def iter_pages(self):
+        pass

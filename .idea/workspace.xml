@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="72f71a9f-11b3-42cf-bee2-bec0769d0347" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/data-dev.sqlite" afterPath="$PROJECT_DIR$/main/data-dev.sqlite" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/controllers/main.py" afterPath="$PROJECT_DIR$/main/controllers/main.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/controllers/posts.py" afterPath="$PROJECT_DIR$/main/controllers/posts.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/models/user.py" afterPath="$PROJECT_DIR$/main/models/user.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/models/post.py" afterPath="$PROJECT_DIR$/main/models/post.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/templates/home.html" afterPath="$PROJECT_DIR$/main/templates/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/templates/post.html" afterPath="$PROJECT_DIR$/main/templates/post.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,8 +27,8 @@
       <file leaf-file-name="posts.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main/controllers/posts.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="18" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="18" />
+            <state relative-caret-position="86">
+              <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding>
                 <element signature="e#0#51#0" expanded="true" />
               </folding>
@@ -38,23 +36,38 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="authentication.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main/controllers/authentication.py">
+      <file leaf-file-name="post.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main/models/post.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="26" column="38" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
+            <state relative-caret-position="340">
+              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#17#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="500.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main/templates/500.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="post.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main/models/post.py">
+      <file leaf-file-name="page_links.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/main/templates/page_links.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+            <state relative-caret-position="170">
+              <caret line="10" column="19" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="19" />
               <folding>
-                <element signature="e#0#17#0" expanded="true" />
+                <element signature="e#225#232#0" expanded="true" />
+                <element signature="e#281#288#0" expanded="true" />
+                <element signature="e#835#842#0" expanded="true" />
+                <element signature="e#882#889#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -72,11 +85,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main/templates/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
+            <state relative-caret-position="425">
+              <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -95,18 +108,8 @@
       <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main/controllers/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="role.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main/models/role.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+            <state relative-caret-position="204">
+              <caret line="15" column="52" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -115,8 +118,8 @@
       <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="584">
-              <caret line="66" column="14" selection-start-line="66" selection-start-column="14" selection-end-line="66" selection-end-column="14" />
+            <state relative-caret-position="170">
+              <caret line="55" column="40" selection-start-line="55" selection-start-column="40" selection-end-line="55" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -137,8 +140,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -161,7 +164,6 @@
         <option value="$PROJECT_DIR$/main/templates/404.html" />
         <option value="$PROJECT_DIR$/main/templates/500.html" />
         <option value="$PROJECT_DIR$/main/forms/login_form.py" />
-        <option value="$PROJECT_DIR$/main/templates/base.html" />
         <option value="$PROJECT_DIR$/main/models.py" />
         <option value="$PROJECT_DIR$/blog.py" />
         <option value="$PROJECT_DIR$/main/errors.py" />
@@ -175,25 +177,26 @@
         <option value="$PROJECT_DIR$/main/controllers/authentication.py" />
         <option value="$PROJECT_DIR$/main/config.py" />
         <option value="$PROJECT_DIR$/main/models/models.py" />
-        <option value="$PROJECT_DIR$/main/models/post.py" />
         <option value="$PROJECT_DIR$/main/__init__.py" />
         <option value="$PROJECT_DIR$/manage.py" />
         <option value="$PROJECT_DIR$/main/models/role.py" />
         <option value="$PROJECT_DIR$/main/models/user.py" />
         <option value="$PROJECT_DIR$/main/templates/user.html" />
         <option value="$PROJECT_DIR$/main/controllers/user.py" />
-        <option value="$PROJECT_DIR$/main/controllers/main.py" />
-        <option value="$PROJECT_DIR$/main/controllers/posts.py" />
         <option value="$PROJECT_DIR$/main/templates/post.html" />
+        <option value="$PROJECT_DIR$/main/controllers/posts.py" />
+        <option value="$PROJECT_DIR$/main/controllers/main.py" />
+        <option value="$PROJECT_DIR$/main/templates/base.html" />
+        <option value="$PROJECT_DIR$/main/models/post.py" />
         <option value="$PROJECT_DIR$/main/templates/home.html" />
+        <option value="$PROJECT_DIR$/main/templates/page_links.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1616" />
-    <option name="height" value="886" />
+    <option name="x" value="198" />
+    <option name="width" value="1600" />
+    <option name="height" value="860" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -483,16 +486,16 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="886" extended-state="6" />
+    <frame x="198" y="0" width="1600" height="860" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.243346" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24583867" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32552084" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24968314" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30901858" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24038461" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -534,14 +537,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main/templates/home.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="612">
@@ -683,13 +678,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/templates/500.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main/models.py" />
     <entry file="file://$PROJECT_DIR$/migrations/versions/34748578735e_added_post.py" />
     <entry file="file://$PROJECT_DIR$/main/controllers.py" />
@@ -809,14 +797,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/controllers/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main/controllers/authentication.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -833,40 +813,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="584">
-          <caret line="66" column="14" selection-start-line="66" selection-start-column="14" selection-end-line="66" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main/models/user.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="301">
           <caret line="30" column="33" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
           <folding>
             <element signature="e#0#33#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/models/post.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#17#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/controllers/posts.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="18" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#51#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -879,11 +831,68 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/main/controllers/posts.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="86">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/controllers/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="15" column="52" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="55" column="40" selection-start-line="55" selection-start-column="40" selection-end-line="55" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/templates/500.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/models/post.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#17#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main/templates/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
+        <state relative-caret-position="425">
+          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/templates/page_links.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="19" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="19" />
+          <folding>
+            <element signature="e#225#232#0" expanded="true" />
+            <element signature="e#281#288#0" expanded="true" />
+            <element signature="e#835#842#0" expanded="true" />
+            <element signature="e#882#889#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

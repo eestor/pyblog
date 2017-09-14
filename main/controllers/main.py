@@ -10,15 +10,7 @@ main = Blueprint('main', __name__)
 @main.route('/home')
 @login_required
 def home():
-    data = {}
-    posts = Post.query.all()
-    '''
-    for post in posts:
-        data[post.id] = {'id': post.id,
-                         'title': post.title,
-                         'body': post.body,
-                         'timestamp': post.timestamp,
-                         'username': post.users.username
-                         }
-    '''
-    return render_template('home.html', posts=posts, current_time=dt.utcnow())
+    objects = []
+    posts = Post.query.order_by(Post.timestamp.desc()).all()
+
+    return render_template('home.html', posts=posts, current_time=dt.utcnow(), object_list=posts)

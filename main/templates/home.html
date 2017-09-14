@@ -27,20 +27,36 @@
         <hr>
         {% endfor %}
     </ul>
+
+
 </div>
 
+{% include 'page_links.html' %}
 {% endblock %}
+
 
 
 {% block sidebar %}
 <div class="top-pad">
+    <form class="form-inline well" method="get" role="form">
+        <h4>Search Topics:</h4>
+        <div class="input-group">
+            <input class="form-control input-xs" name="q" placeholder="Search" value="{{ request.args.get('q', '') }}" />
+            <span clas="input-group-btn">
+                <button class="btn btn-default" type="submit">Go</button>
+            </span>
+        </div>
+    </form>
     <ul class="well nav nav-list">
-        <li><h4>Tags</h4></li>
+        <h4>Other Popular Blogs:</h4>
+        <li><a href="#" >Flask</a> </li>
+        <li><a href="#" >Python</a></li>
+        <li><a href="#" >MongoDB</a></li>
     </ul>
-    <p>The local date and time is {{ moment(current_time).format('LLL') }}.</p>
+    <p>Today is:  {{ moment(current_time).format('LLL') }}.</p>
     <p>That was {{ moment(current_time).fromNow(refresh=True) }}</p>
     {% if current_user.is_authenticated %}
-    <p> Current User: {{ current_user.username }} </p>
+    <p> Current Logged User: {{ current_user.username }} </p>
     {% else %}
     <p> Current User: Stranger </p>
     {% endif %}
