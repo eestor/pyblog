@@ -1,31 +1,109 @@
 {% extends 'base.html' %}
 
+
 {% block content_title %}
-<h1> Welcome to my Python Blog ! </h1>
-<h4> This blog discusses about in-depth Python usage as a Web Service Application </h4>
+<div style="background: #CCFFCC" class="jumbotron">
+    <div class="media">
+        <a class="pull-left" href="#">
+            <img src="{{ url_for('static', filename='img/knights_logo.gif') }}" class="img-rounded" height=120px"
+                 alt="Media Object">
+        </a>
+        <div class="media-body">
+            <h3 class="media-heading">Welcome to Aeztor's Python Blog Site</h3>
+            <p> By signing-up you'll have access to all resources and materials and you be able to collaborate with
+                Great
+                Python Developers
+            </p>
+            <a class="btn btn-primary btn-lg" role="button"> Sign Up </a>
+        </div>
+    </div>
+</div>
+
+<h3>
+    Good day, {{ current_user.username }} ! <br/>
+    <small> Current Date & Time : &nbsp; <strong> {{ moment(current_time).format('LLL') }} </strong></small>
+</h3>
+
+<br/>
+
+<div>
+    <ul id="myTab" class="nav nav-tabs">
+        <li class="active"><a href="#python" data-toggle="tab">Python</a></li>
+        <li><a href="#flask" data-toggle="tab">Flask</a></li>
+        <li><a href="#jinja" data-toggle="tab">Jinja2</a></li>
+        <li><a href="#nosql" data-toggle="tab">NoSQL DB</a></li>
+        <li><a href="#docker" data-toggle="tab">Docker</a></li>
+    </ul>
+</div>
+
+<br/>
+
+
+<div id="myTabContent" class="tab-content">
+    <div class="tab-pane fade in active" id="python">
+        <p> Python is a widely used high-level programming language for general-purpose programming, created by Guido
+            van Rossum and first released in 1991.
+            An interpreted language, Python has a design philosophy that emphasizes code readability (notably using
+            whitespace indentation to delimit code
+            blocks rather than curly brackets or keywords), and a syntax that allows programmers to express concepts in
+            fewer lines of code than might be
+            used in languages such as C++ or Java.[23][24] The language provides constructs intended to enable writing
+            clear programs on both a small and
+            large scale.[25]</p>
+    </div>
+    <div class="tab-pane fade" id="flask">
+        <p> Flask is a micro web framework written in Python and based on the Werkzeug toolkit and Jinja2 template
+            engine. It is BSD licensed.
+            The latest stable version of Flask is 0.12 as of December 2016.[2] Applications that use the Flask framework
+            include Pinterest,[3]
+            LinkedIn,[4] and the community web page for Flask itself.[5]</p>
+    </div>
+    <div class="tab-pane fade" id="jinja">
+        <p> Jinja is a template engine for the Python programming language and is licensed under a BSD License created
+            by Armin Ronacher.
+            It is similar to the Django template engine but provides Python-like expressions while ensuring that the
+            templates are evaluated in a sandbox.
+            It is a text-based template language and thus can be used to generate any markup as well as sourcecode.</p>
+    </div>
+    <div class="tab-pane fade" id="nosql">
+        <p> NOSQL</p>
+    </div>
+</div>
+
 {% endblock %}
 
 
 {% block page_content %}
 <div>
-    <ul class="posts">
+    <ul class="media-list">
         {% for post in posts %}
-        <li class="post">
-            <div class="profile-thumbnail">
-                <h2>
+        <li class="media">
+            <a class="pull-left" href="#">
+                <img class="img-rounded profile-thumbnail" src="{{ post.author.gravatar(size=60) }}" alt="Media Object">
+            </a>
+            <div class="media-body">
+                <h4 class="media-heading">
                     <a href="{{ url_for('posts.post', id=post.id) }}"> {{ post.title }} </a>
-                </h2>
-                <h4>
-                    <img class="img-rounded profile-thumbnal" src={{ post.author.gravatar(size=40) }}>
-                    <small> By : {{ post.author.username }}</small>
+                    <span class="badge">New</span>
                 </h4>
-                <h4>
-                    <small> Created on: {{ post.timestamp }}</small>
-                </h4>
+                Author : {{ post.author.username }} <br/>
+                Created on: {{ post.timestamp }}
             </div>
         </li>
-        <hr>
+        <br/>
+        <br/>
+
         {% endfor %}
+    </ul>
+
+    <ul class="pagination">
+        <li><a href="#">&laquo;</a></li>
+        <li><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li><a href="#">&raquo;</a></li>
     </ul>
 </div>
 
@@ -33,17 +111,23 @@
 
 
 {% block sidebar %}
-<div class="top-pad">
-    <ul class="well nav nav-list">
-        <li><h4>Tags</h4></li>
+<div style="background: #FF9966" class="well well-md">
+    <div class="input-group">
+        <input type="text" class="form-control">
+        <span class="input-group-btn">
+            <button class="btn btn-default" type="button">
+               Go!
+            </button>
+        </span>
+
+    </div>  <!-- input-group -->
+
+    <ul class="nav nav-list">
+        <li><h4 style="color: white">[ Advertisements ]</h4></li>
     </ul>
-    <p>The local date and time is {{ moment(current_time).format('LLL') }}.</p>
-    <p>That was {{ moment(current_time).fromNow(refresh=True) }}</p>
-    {% if current_user.is_authenticated %}
-    <p> Current User: {{ current_user.username }} </p>
-    {% else %}
-    <p> Current User: Stranger </p>
-    {% endif %}
+    <a href="#">
+        <img src="{{ url_for('static', filename='img/ads.png') }}" height="150px">
+    </a>
 </div>
 {% endblock %}
 
