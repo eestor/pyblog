@@ -6,6 +6,7 @@ from flask_moment import Moment
 from flask_admin import Admin
 from flask_admin.contrib.sqla import ModelView
 
+
 app = Flask(__name__)
 
 db = SQLAlchemy(app)
@@ -15,6 +16,7 @@ login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.session_protection = 'strong'
 login_manager.login_view = 'auth.login'
+
 
 from .controllers.authentication import auth
 from .controllers.main import main
@@ -34,3 +36,4 @@ admin = Admin(app, 'PyBlog Admin')
 admin.add_view(ModelView(Role, db.session))
 admin.add_view(ModelView(User, db.session))
 admin.add_view(ModelView(Post, db.session))
+

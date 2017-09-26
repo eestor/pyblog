@@ -2,12 +2,34 @@
 {% import "bootstrap/wtf.html" as wtf %}
 
 {% block content_title %}
-<h2>Register New User:</h2>
+<h3>Do you want to register a new user?</h3>
+<p>By registering a new account , you are thereby bound to terms and condition as stipulated herein</p>
 {% endblock %}
 
 {% block page_content %}
-<div class="col-md-6">
-    {{ wtf.quick_form(form) }}
+
+<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+    Proceed
+</button>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"> 
+                    &times; 
+                </button>
+                 
+                <h4 class="modal-title" id="myModalLabel"> 
+                    Register new user:
+                </h4>
+                <div class="modal-body">
+                    {{ wtf.quick_form(form) }}
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
 
 {% endblock %}

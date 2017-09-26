@@ -1,5 +1,9 @@
 from flask import Blueprint, render_template, abort
+from .decorators import admin_required, permission_required
 from ..models.post import Post
+from ..models.permission import Permission
+from flask_login import login_required, current_user
+
 
 posts = Blueprint('posts', __name__)
 
@@ -10,6 +14,17 @@ def post(id):
     if not post:
         abort(404)
     return render_template('post.html', post=post)
+
+@posts.route('/permission/admin')
+@login_required
+@admin_required
+def admin():
+    return str(current_user.is_administrator())
+
+@posts.route('/permission/moderator')
+@permission_required(Permission.MODERATE_COMMENTS)
+def moderator():
+    return str(current_user.is_administrator())
 
 
 '''
