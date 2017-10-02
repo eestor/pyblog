@@ -6,7 +6,7 @@ from main.models.user import User
 from main.models.post import Post
 from werkzeug.contrib.profiler import ProfilerMiddleware
 from flask_admin import Admin
-
+import os
 
 def make_shell_context():
     return dict(app=app, db=db, Role=Role, User=User, Post=Post)
@@ -49,9 +49,12 @@ def initialize_db():
 
     db.session.commit()
 
+port = os.getenv('VCAP_APP_PORT', '5000')
+
 if __name__ == '__main__':
     #db.drop_all()
     #db.create_all()
     print("db has been initialized")
     #initialize_db()
-    manager.run()
+    #manager.run()
+    app.run(host='0.0.0.0', port=int(port))

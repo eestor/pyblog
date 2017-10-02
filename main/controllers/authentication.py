@@ -1,11 +1,40 @@
-from flask import Blueprint, render_template, request, redirect, url_for, flash, abort
+from flask import Blueprint, render_template, request, redirect, url_for, flash, abort, session
 from flask_login import login_required, logout_user, login_user, current_user
 from .. import db
 from ..models.user import User
 from ..forms.login_form import LoginForm
 from ..forms.user_register_form import RegistrationForm
+from .oauth import OAuthSignIn
 
 auth = Blueprint('auth', __name__)
+
+
+@auth.route('/authorize/<provider>')
+def oauth_authorize(provider):
+    if not current_user.is_anonymous:
+        return redirect(url_for('login'))
+    oauth = OAuthSignIn.get_provider(provider)
+    return oauth.authorize()
+
+
+@auth.route('/callback/<provider>')
+def oauth_callback(provider):
+    if not current_user.is_anonymous:
+        return redirect(url_for('login'))
+    oauth = OAuthSignIn.get_provider(provider)
+    social_id, username, email = oauth.callback()
+    if social_id is None:
+        flash('Authentication failed.')
+        return redirect(url_for('login'))
+    user = User.query.filter_by(email=email).first()
+    if not user:
+        user = User(username=username, email=email)
+        db.session.add(user)
+        db.session.commit()
+    login_user(user, True)
+    return redirect(url_for('main.home'))
+
+
 
 @auth.route('/login', methods=['GET', 'POST'])
 def login():

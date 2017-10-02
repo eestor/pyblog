@@ -1,12 +1,11 @@
 {% extends "base.html" %}
 {% import "bootstrap/wtf.html" as wtf %}
 
-{% block content_title %}
-<h3>Do you want to register a new user?</h3>
-<p>By registering a new account , you are thereby bound to terms and condition as stipulated herein</p>
-{% endblock %}
-
 {% block page_content %}
+
+<h3>Do you want to register a new user? <br/>
+<small>By registering a new account , you are thereby bound to terms and condition as stipulated herein</small>
+</h3>
 
 <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
     Proceed

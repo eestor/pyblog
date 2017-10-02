@@ -1,11 +1,48 @@
 {% extends "base.html" %}
 {% import "bootstrap/wtf.html" as wtf %}
 
+
+{% block scripts %}
+
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '{your-app-id}',
+      cookie     : true,
+      xfbml      : true,
+      version    : '{latest-api-version}'
+    });
+    FB.AppEvents.logPageView();
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+
+</script>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10&appId=279444199215077";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+
+</script>
+
+{% endblock %}
+
 {% block content_title %}
 <div class="row" style="background: #CCFFCC">
-<h3>
-    &nbsp; &nbsp;Login Required:
-</h3>
+    <h3>
+        &nbsp; &nbsp;Login Required:
+    </h3>
 </div>
 {% endblock %}
 
@@ -19,6 +56,11 @@
             Click here to register
         </a>
     </p>
+    <div class="tab-pane" id="social-logins">
+        <p><a href="{{ url_for('auth.oauth_authorize', provider='facebook') }}">Login with Facebook</a></p>
+        <p><a href="{{ url_for('auth.oauth_authorize', provider='twitter') }}">Login with Twitter</a></p>
+    </div>
+
 </div>
 
 

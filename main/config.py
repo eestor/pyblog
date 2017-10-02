@@ -7,6 +7,16 @@ class BaseConfig(object):
     TESTING = False
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'secret'
     SQLALCHEMY_COMMIT_ON_TEARDOWN = True
+    OAUTH_CREDENTIALS = {
+        'facebook': {
+            'id': '279444199215077',
+            'secret': '9fb107214bbbed607bd8d8ec0d8f263b'
+        },
+        'twitter': {
+            'id': '3RzWQclolxWZIMq5LJqzRZPTl',
+            'secret': 'm9TEd58DSEtRrZHpz2EjrV9AhsBRxKMo8m3kuIZj3zLwzwIimt'
+        }
+    }
 
 
 class ProductionConfig(BaseConfig):

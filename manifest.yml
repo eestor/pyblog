@@ -1,0 +1,10 @@
+applications:
+- path: .
+  memory: 254M
+  instances: 1
+  domain: eu-gb.mybluemix.net
+  name: aeztorblog
+  host: aeztorblog
+  disk_quota: 1024M
+  buildpack: python_buildpack
+
