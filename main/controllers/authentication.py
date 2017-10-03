@@ -69,6 +69,7 @@ def register():
     return render_template('register.html', form=form)
 
 
+
 '''
 @auth.before_app_request
 def before_request():

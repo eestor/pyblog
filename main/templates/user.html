@@ -1,28 +1,56 @@
-
-{% extends 'base.html' %}
-
-
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% from 'bootstrap/wtf.html' import form_field %}
 
 {% block page_content %}
-<div class="page-header">
-    <h1>{{ user.username }}</h1>
-    {% if user.name or user.location %}
-    <p>
-        {% if user.name %}{{ user.name }}{% endif %}
-        {% if user.location %}
-        From <a href="http://maps.google.com/?q={{ user.location }}">
-        {{ user.location }}
+<div class="media">
+    <a class="pull-left" href="#">
+        <img src="{{ current_user.gravatar(size=100) }}" class="img-rounded" alt="Media Object">
     </a>
+    <div class="media-body">
+        <h1>{{ user.username }}</h1>
+        {% if user.name or user.location %}
+        <p>
+            {% if user.name %}{{ user.name }}{% endif %}
+            {% if user.location %}
+            From <a href="http://maps.google.com/?q={{ user.location }}">{{ user.location }}</a>
+            {% endif %}
+        </p>
         {% endif %}
-    </p>
-    {% endif %}
-    {% if current_user.is_administrator() %}
-    <p><a href="mailto:{{ user.email }}">{{ user.email }}</a></p>
-    {% endif %}
-    {% if user.about_me %}<p>{{ user.about_me }}</p>{% endif %}
-    <p>
-        Member since {{ moment(user.member_since).format('L') }}.
-        Last seen {{ moment(user.last_seen).fromNow() }}.
-    </p>
+        {% if current_user.is_administrator() %}
+        <p><a href="mailto:{{ user.email }}">{{ user.email }}</a></p>
+        {% endif %}
+        {% if user.about_me %}<p>{{ user.about_me }}</p>{% endif %}
+        <p>
+            Member since {{ moment(user.member_since).format('L') }}.
+            Last seen {{ moment(user.last_seen).fromNow() }}.
+        </p>
+        {% if user == current_user %}
+        <button class="btn btn-primary btn-md" data-toggle="modal" data-target="#editProfileModal">
+            Edit Profile
+        </button>
+        {% endif %}
+    </div>
+
+    <div class="modal fade" id="editProfileModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"> 
+                        &times; 
+                    </button>
+                     
+                    <h4 class="modal-title" id="myModalLabel"> 
+                        Edit User Profile:
+                    </h4>
+                    <div class="modal-body">
+                        {{ wtf.quick_form(form) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
 {% endblock %}
