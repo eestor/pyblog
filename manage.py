@@ -56,5 +56,5 @@ if __name__ == '__main__':
     #db.create_all()
     print("db has been initialized")
     #initialize_db()
-    #manager.run()
-    app.run(host='0.0.0.0', port=int(port))
+    manager.run()
+    #app.run(host='0.0.0.0', port=int(port))

@@ -21,3 +21,19 @@ class Post(db.Model):
 
     def iter_pages(self):
         pass
+
+    @staticmethod
+    def generate_fake(count=100):
+        from random import seed, randint
+        from .user import User
+        import forgery_py
+
+        seed()
+        user_count = User.query.count()
+        for i in range(count):
+            u = User.query.offset(randint(0, user_count - 1)).first()
+            p = Post(body=forgery_py.lorem_ipsum.sentences(randint(1, 3)),
+                     timestamp=forgery_py.date.date(True),
+                     author=u)
+            db.session.add(p)
+            db.session.commit()
