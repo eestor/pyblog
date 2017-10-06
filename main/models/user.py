@@ -25,6 +25,7 @@ class User(UserMixin, db.Model):
     about_me = db.Column(db.Text())
     member_since = db.Column(db.DateTime(), default=datetime.utcnow)
     last_seen = db.Column(db.DateTime(), default=datetime.utcnow)
+    comments = db.relationship('Comment', backref='author', lazy='dynamic')
 
     def __repr__(self):
         return '<User %r>' % self.username

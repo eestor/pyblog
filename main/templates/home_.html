@@ -2,7 +2,6 @@
 {% import "bootstrap/wtf.html" as wtf %}
 {% import "_macros.html" as macros %}
 
-
 {% block content_title %}
 
 <br \>
@@ -81,21 +80,54 @@
     {{ wtf.quick_form(form) }}
     {% endif %}
 </div>
-
 <hr/>
+<div>
+    <ul class="media-list">
+        {% for post in posts %}
+        <li class="media">
+            <a class="pull-left" href="#">
+                <img class="media-object" src="{{ post.author.gravatar(size=60) }}" alt="Media Object">
+            </a>
+            <div class="media-body">
+                <h4 class="media-heading">
+                    <a href="{{ url_for('posts.post', id=post.id) }}"> {{ post.title }} </a>
+                    <span class="badge">New</span>
+                </h4>
+                Author : {{ post.author.username }} <br/>
+                Created on: {{ post.timestamp }}
+            </div>
+        </li>
+        <br/>
+        <br/>
 
-<div class="post-tabs">
-    {% include '_posts.html' %}
-</div>
+        {% endfor %}
+    </ul>
 
-{% if pagination %}
-<div class="pagination">
+    <ul class="posts">
+        {% for post in posts %}
+        <li class="post">
+            <div class="profile-thumbnail">
+                <a href="{{ url_for('main.user', username=post.author.username) }}"> <img
+                        class="img-rounded profile-thumbnail"
+                        src="{{ post.author.gravatar(size=40) }}"> </a>
+            </div>
+            <div class="post-date">{{ moment(post.timestamp).fromNow() }}</div>
+            <div class="post-author">
+                <a href="{{ url_for('main.user', username=post.author.username) }}">
+                    {{ post.author.username }}
+                </a>
+            </div>
+            <div class="post-body">{{ post.body }}</div>
+        </li>
+        {% endfor %}
+    </ul>
+
+
+    <br/>
+    <div class="pagination">
     {{ macros.pagination_widget(pagination, 'main.home') }}
+    </div>
 </div>
-
-{% endif %}
-
-
 {% endblock %}
 
 

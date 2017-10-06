@@ -6,6 +6,7 @@ class BaseConfig(object):
     DEBUG = True
     TESTING = False
     FLASKY_POSTS_PER_PAGE = 10
+    FLASKY_COMMENTS_PER_PAGE = 10
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'secret'
     SQLALCHEMY_COMMIT_ON_TEARDOWN = True
     OAUTH_CREDENTIALS = {

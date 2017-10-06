@@ -1,60 +1,21 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% import "_macros.html" as macros %}
 
+{% block title %}Flasky - Post{% endblock %}
 
 {% block page_content %}
-<div class="media">
-    <a class="pull-left" href="#">
-        <img class="media-object" src={{ post.author.gravatar(size=80) }} alt="Media Object">
-    </a>
-    <div class="media-body">
-        <h2 class="media-heading">
-            <a href="{{ url_for('posts.post', id=post.id) }}"> {{ post.title }} </a>
-        </h2>
-        Author : {{ post.author.username }} <br/>
-        Created on : {{ post.timestamp }} <br/>
-    </div>
-    <br/>
-    <br/>
-    <div>
-        {{ post.body }}
-    </div>
+{% include '_posts.html' %}
+<h4 id="comments">Comments</h4>
+{% if current_user.can(Permission.COMMENT) %}
+<div class="comment-form">
+    {{ wtf.quick_form(form) }}
 </div>
-
-
-<div>
-    <h3>Your feedback is important to us !</h3>
-    <!-- Button trigger modal -->
-    <button class="btn btn-primary btn-lg" data-toggle="modal"
-            data-target="#myModal">
-        Add Comment
-    </button>
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close"
-                            data-dismiss="modal" aria-hidden="true">
-                        &times;
-                    </button>
-                    <h4 class="modal-title" id="myModalLabel">
-                        Leave your comments here:
-                    </h4>
-                </div>
-                <div class="modal-body">
-                   <textarea class="form-control" rows="5"></textarea>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default"
-                            data-dismiss="modal">Back
-                    </button>
-                    <button type="button" class="btn btn-primary">
-                        Submit
-                    </button>
-                </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal -->
-    </div>
+{% endif %}
+{% include '_comments.html' %}
+{% if pagination %}
+<div class="pagination">
+    {{ macros.pagination_widget(pagination, '.post', fragment='#comments', id=posts[0].id) }}
 </div>
-
+{% endif %}
 {% endblock %}
